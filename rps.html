@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>Rock, Paper, Scissors</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var game=['r','s','p'];
+            var userScore=0;
+            var computerScore=0;
+            for(var i=0; i<10;i++){
+                var user=prompt("Choose r, s, or p:");
+                var choice= Math.floor(Math.random()*3);
+                var computer = game[choice];
+                console.log(`computer chooses ${computer}`);
+                console.log(`I choose: ${user}`);
+                if(user == computer){
+                    alert("Its a tie!");
+                    console.log("Its a tie!");
+                }
+                else if(user == 'r'){
+                    if(computer == 's'){
+                        alert("Computer loses!");
+                        console.log("Computer loses!");
+                        userScore++;
+                    }
+                    else{
+                        alert("Computer wins!");
+                        console.log("Computer wins!");
+                        computerScore++;
+                    }                
+                }
+                else if(user == 'p'){
+                    if(computer == 's'){
+                        alert("Computer wins!");
+                        console.log("Computer wins!");
+                        computerScore++;
+                    }
+                    else{
+                        alert("Computer loses!");
+                        console.log("Computer loses!");
+                        userScore++;
+                    }
+                }
+                else if(user == 's'){
+                    if(computer == 'r'){
+                        alert("Computer wins!");
+                        console.log("Computer wins!");
+                        computerScore++;
+                    }
+                    else{
+                        alert("Computer loses!");
+                        console.log("Computer loses!");
+                        userScore++;
+                    }
+                }
+            }
+            console.log(typeof userScore);
+            console.log(`The user's score is ${userScore}`);
+            console.log(typeof computerScore);
+            console.log(`The computer's score is ${computerScore}`);
+        </script>
+    </body>
+</html>
